@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config().parsed
 
 export default {
   /*
@@ -29,6 +30,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/app.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -54,17 +56,34 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/prismic'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
+
   /*
   ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {
+  build: {},
+
+  /*
+  ** Prismic configuration
+  */
+  prismic: {
+    endpoint: dotenv.API_ENDPOINT,
+    apiOptions: {
+      // accessToken: dotenv.API_TOKEN,
+      routes: [
+        {
+          type: 'recipe',
+          path: '/:uid'
+        }
+      ]
+    },
+    htmlSerializer: '@/plugins/html-serializer'
   }
 }
