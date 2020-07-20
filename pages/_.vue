@@ -9,6 +9,10 @@
         {{ date }}
       </div>
 
+      <div class="note">
+        <prismic-rich-text :field="notes" />
+      </div>
+
       <h2>
         Ingredients
       </h2>
@@ -32,6 +36,7 @@ export default {
       return {
         title: data.title,
         date: moment(data.date).format('MMMM Do, YYYY'),
+        notes: data.notes,
         ingredients: data.ingredients,
         instructions: data.instructions
       }

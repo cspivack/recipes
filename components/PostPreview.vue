@@ -1,5 +1,5 @@
 <template>
-  <article :id="post.uid">
+  <article :id="post.uid" class="post-preview">
     <h3 class="post-title">
       <nuxt-link :to="post.uid">
         {{ $prismic.asText(post.title) }}

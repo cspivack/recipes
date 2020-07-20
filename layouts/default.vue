@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <main>
+    <main id="main">
       <Nuxt />
     </main>
   </div>
@@ -15,3 +15,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+#main {
+  padding: 1.5rem 0;
+}
+</style>

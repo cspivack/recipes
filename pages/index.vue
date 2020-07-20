@@ -1,11 +1,9 @@
 <template>
   <div class="container">
-    <div>
-      <h1 class="title">
-        recipes
-      </h1>
-      <PostPreview v-for="post in posts" :key="post.uid" :post="post" />
-    </div>
+    <h1 class="title">
+      recipe blog
+    </h1>
+    <PostPreview v-for="post in posts" :key="post.uid" :post="post" />
   </div>
 </template>
 
@@ -30,3 +28,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.container {
+  flex-wrap: wrap;
+}
+.title,
+.post-preview {
+  width: 100%;
+}
+</style>
