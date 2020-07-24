@@ -7,9 +7,9 @@ export default {
   components: {
     PostPreview
   },
-  async asyncData ({ $prismic, error }) {
+  async asyncData ({ $prismic, params, error }) {
     const response = await $prismic.api.query(
-      $prismic.predicates.at('document.type', 'recipe')
+      $prismic.predicates.at('document.tags', [params.name])
     )
     const posts = map(response.results, post => ({
       uid: post.uid,
@@ -17,12 +17,8 @@ export default {
       tags: post.tags
     }))
     return {
-      posts
-    }
-  },
-  data () {
-    return {
-      title: 'recipe blog'
+      posts,
+      title: 'recipes tagged: ' + params.name
     }
   },
   template: 'blog'

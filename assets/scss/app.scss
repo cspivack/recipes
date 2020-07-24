@@ -1,3 +1,4 @@
+$red: #b50000;
 
 html {
   font-family: 'Kanit', sans-serif;
@@ -60,5 +61,27 @@ strong {
 }
 
 a {
-  color: #b50000;
+  color: $red;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+
+.tag {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.3125rem 0.75rem 0.5rem;
+  margin-left: 0.5rem;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:hover,
+  &:focus {
+    background: lighten($red, 60%);
+  }
+  &:active {
+    background: lighten($red, 55%);
+  }
 }
