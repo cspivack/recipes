@@ -23,12 +23,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.post-title {
-  font-size: 1.875rem;
-}
-.post-preview {
-  padding: 1rem 0;
-}
-</style>

@@ -86,5 +86,15 @@ export default {
       ]
     },
     htmlSerializer: '@/plugins/html-serializer'
+  },
+
+  generate: {
+    exclude: [
+      '/preview'
+    ],
+    fallback: true,
+    routes: [
+      '/'
+    ]
   }
 }

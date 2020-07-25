@@ -56,7 +56,6 @@ export default {
       title
     }
   },
-  template: 'blog',
   head () {
     let title = this.title
 
