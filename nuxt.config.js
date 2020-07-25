@@ -84,13 +84,11 @@ export default {
         }
       ]
     },
-    htmlSerializer: '@/plugins/html-serializer'
+    htmlSerializer: '@/plugins/html-serializer',
+    preview: false
   },
 
   generate: {
-    exclude: [
-      '/preview'
-    ],
     fallback: true,
     routes: [
       '/'
