@@ -75,9 +75,8 @@ export default {
   ** Prismic configuration
   */
   prismic: {
-    endpoint: dotenv.API_ENDPOINT,
+    endpoint: process.env.API_ENDPOINT || dotenv.API_ENDPOINT,
     apiOptions: {
-      // accessToken: dotenv.API_TOKEN,
       routes: [
         {
           type: 'recipe',
