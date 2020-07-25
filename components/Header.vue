@@ -1,7 +1,7 @@
 <template>
   <header id="header">
     <nuxt-link to="/">
-      Recipes
+      recipes
     </nuxt-link>
   </header>
 </template>

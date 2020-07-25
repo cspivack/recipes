@@ -22,13 +22,24 @@
         Instructions
       </h2>
       <prismic-rich-text :field="instructions" />
+
+      <hr>
+
+      <h3>
+        Tags
+      </h3>
+      <Tags :tags="tags" :post-id="uid" />
     </article>
   </div>
 </template>
 
 <script>
 import moment from 'moment'
+import Tags from '~/components/Tags'
 export default {
+  components: {
+    Tags
+  },
   async asyncData ({ route, $prismic, error }) {
     try {
       const response = await $prismic.api.getByUID('recipe', route.params.pathMatch)
@@ -38,7 +49,9 @@ export default {
         date: moment(data.date).format('MMMM Do, YYYY'),
         notes: data.notes,
         ingredients: data.ingredients,
-        instructions: data.instructions
+        instructions: data.instructions,
+        tags: response.tags,
+        uid: response.uid
       }
     } catch (e) {
       error({ statusCode: 404, message: 'Page not found' })
