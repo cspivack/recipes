@@ -40,9 +40,9 @@ export default {
   components: {
     Tags
   },
-  async asyncData ({ route, $prismic, error }) {
+  async asyncData ({ $prismic, params, error }) {
     try {
-      const response = await $prismic.api.getByUID('recipe', route.params.pathMatch)
+      const response = await $prismic.api.getByUID('recipe', params.name)
       const data = response.data
       return {
         title: data.title,

@@ -1,7 +1,7 @@
 <template>
   <article :id="post.uid" class="post-preview">
     <h3 class="post-title">
-      <nuxt-link :to="'/' + post.uid">
+      <nuxt-link :to="post.url">
         {{ $prismic.asText(post.title) }}
       </nuxt-link>
     </h3>

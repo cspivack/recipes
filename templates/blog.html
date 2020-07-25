@@ -3,4 +3,5 @@
     {{ title }}
   </h1>
   <PostPreview v-for="post in posts" :key="post.uid" :post="post" />
+  <Pagination v-if="pages.total > 1" :pages="pages" />
 </div>

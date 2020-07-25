@@ -93,3 +93,18 @@ a {
 hr {
   margin: 1.5rem 0 1.25rem;
 }
+
+.pagination {
+  .button {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+    display: inline-block;
+    line-height: 1;
+    padding: 0.25rem 0.3125rem;
+    min-width: 1.5rem;
+    &.nuxt-link-exact-active {
+      border-bottom-color: $red;
+    }
+  }
+}
