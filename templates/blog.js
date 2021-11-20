@@ -9,7 +9,8 @@ export default {
   },
   async asyncData ({ $prismic, route, params, error }) {
     const options = {
-      pageSize: 10
+      pageSize: 10,
+      orderings: '[my.recipe.date desc]'
     }
 
     if (params.page) {
